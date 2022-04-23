@@ -22,7 +22,10 @@ class DashboardController extends Controller
             ]);
         }
         else{
-            return view('user.dashboard');
+            $user = Auth::user();
+            return view('user.dashboard')->with([
+                'user' => $user
+            ]);
         }
     }
 
